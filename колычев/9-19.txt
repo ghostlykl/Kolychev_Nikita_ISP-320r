@@ -1,0 +1,103 @@
+9.1
+let str = 'le2, 1hd2, 1nf2, 1ex2, 1gsd2'.match(/1[^e,x]+2/g, '!');
+console.log(str); 
+9.2
+let str = 'x3z, x1z, x6z, x0z'.match(/x[^2-6]+z/g, '!');
+console.log(str); 
+9.3
+let str = 'xAAz, xaz, xBBz, x0z'.match(/x[^A-Z]+?z/g, '!');
+console.log(str); 
+9.4
+let str = 'x1z, xAz, xaz, x0z'.match(/x[^A-Za-z, 1-5]+?z/g, '!');
+console.log(str); 
+10.1
+let str = 'wоw wяw wёw wqw'.match(/w[а-яё]w/g, '!');
+console.log(str); 
+10.2
+let str = 'ааа ббб ёёё ззз ййй ААА БББ ЁЁЁ ЗЗЗ ЙЙЙ'.match(/[А-ЯЁа-яё]+/g);
+console.log(str); 
+11.1
+let str = 'aba aea aca aza axa a.a a+a a*a'.match(/a[.+*]a/g);
+console.log(str); 
+11.2
+let str = 'xaz x.z x3z x@z x$z xrz'.match(/x[^.@$]z/g);
+console.log(str); 
+12.1
+let str = 'xaz x55z x.z x@z'.match(/x[\d|.]+z/g, '!');
+console.log(str); 
+12.2
+let str = 'xhhz x5z x.z x@z'.match(/x[^\da-g{3,7}]z/g, '!');
+console.log(str); 
+13.1
+let str = 'x[]z x{}z x.z x()z'.match(/x[\[\]\{\}\(\)]+z/g, '!');
+console.log(str); 
+13.2
+let str = '[abc] {abc} abc (abc) [abc]'.replace(/[^\[\]\{\}\(\)]+/g,'!');
+console.log(str); 
+14.1
+let str = '^xx axx ^zz bkk @ss'.match(/[\^@][\w]{2}/g, '!');
+console.log(str); 
+14.2
+let str = '^xx axx ^zz bkk @ss'.match(/[^\^@][\w]{2}/g, '!');
+console.log(str); 
+14.3
+let str = '^xx axx ^zz bkk'.match(/[^\^][\w]{2}/g, '!');
+console.log(str); 
+15.1
+let str = 'xaz xBz xcz x-z x@z'.match(/x[a-zA-Z-]z/g, '!');
+console.log(str); 
+15.2
+let str = 'xaz x$z x-z xcz x+z x%z x*z'.match(/x[$+-]z/g, '!');
+console.log(str); 
+16.1
+let str = 'abc def xyz'.match(/^[\w]+/g, '!');
+console.log(str); 
+16.2
+let str = 'abc def xyz'.match(/^[\w]+$/g, '!');
+console.log(str); 
+17.1
+let str = 'aeeea aeea aea axa axxa axxxa'.match(/ae+a|ax+a/g);
+console.log(str); 
+17.2
+let str = 'aeeea aeea aea axa axxa axxxa'.match(/ae{2}a|ax*a/g);
+console.log(str); 
+18.1
+let str = /^http:/.test('https://playcode.io/javascript');
+console.log(str); 
+18.2
+let str = /^https?/.test('https://playcode.io/javascript');
+console.log(str);
+18.3
+let str = /txt|html|php$/.test('dgsdg.txt');
+console.log(str); 
+18.4
+let str = /jpg|jpeg/.test('dgsdg.jpg');
+console.log(str); 
+18.5
+let str = /jpg|jpeg|png/.test('dgsdg.pn');
+console.log(str); 
+18.6
+let str = /^\d{1,12}$/.test('1234567890123');
+console.log(str); 
+18.7
+let str = (/(19|20)\d\d-((0[1-9]|1[012])-(0[1-9]|[12]\d)|(0[13-9]|1[012])-30|(0[13578]|1[02])-31)/.test('2020-02-28'));
+console.log(str); 
+18.8
+let str = (/30|(0[13578]|1[02])|31.(0[1-9]|[12]\d)|(0[13-9]|1[012]).(19|20)\d\d-((0[1-9]|1[012]))/.test('10.11.1945'));
+console.log(str); 
+18.9
+let str = (/^([0-1]\d|2[0-3])(:[0-5]\d){2}$/.test('17:40:30'));
+console.log(str); 
+18.10
+let str = (/^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/.test('mamr@yu.net'));
+console.log(str); 
+18.11
+let str = (/^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/.test('code.mu'));
+console.log(str); 
+19.1
+let str = 'site.ru sss site.com zzz site.net';
+console.log(str.match(/([A-z0-9]([A-z0-9\-]{0,61}[A-z0-9])?\.)+[A-z]{2,6}/g)); 
+19.2
+let str = 'a1b c34d x567z';
+console.log(res= str.match(/\d+/g).reduce((a,b) => a += +b, 0));
+

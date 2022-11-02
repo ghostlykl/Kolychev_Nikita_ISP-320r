@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="elem">text</button>
+    <div class="elen-2">asdadqw2de</div>
+<script>
+    elem.addEventListener('click', function(event) {
+	console.log(event.type); // выведет 'click'
+});
+let elem = document.querySelector('#elem');
+let elemButton = document.querySelector('.elen-2');
+
+elem.addEventListener('click', function(){
+    elemButton.style.backgroundColor = "green";
+});
+elem.addEventListener('dblclick', function(){
+    elemButton.style.backgroundColor = "red";
+});
+function func(event) {
+    console.log(event.type);
+    if (event.type === 'click') {
+        elemButton.style.backgroundColor = "green";
+    }
+    if (event.type === 'dblclick') {
+        elemButton.style.backgroundColor = "red";
+    }
+}
+</script>
+
+</body>
+</html>
